@@ -9,12 +9,12 @@ const Home: NextPage = () => {
     author: {
       username: 'Dorak',
       nickname: 'Dorak',
-      avatarSrc: 'https://www.pngmart.com/files/22/User-Avatar-Profile-PNG-Isolated-Transparent-HD-Photo.png',
+      avatarSrc: 'https://vectorified.com/images/avatar-icon-png-24.png',
     },
     stats: {
-      likes: 5300000,
-      shares: 45200,
-      comments: 123200,
+      likes: '48.4k',
+      shares: '0',
+      comments: '3304',
     },
   };
 
