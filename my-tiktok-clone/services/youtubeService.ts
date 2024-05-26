@@ -13,6 +13,11 @@ interface Video {
   comments: number;
 }
 
+interface YouTubeApiResponse {
+  items: any[];
+  nextPageToken?: string;
+}
+
 export const getVideos = async (): Promise<Video[]> => {
   try {
     const response = await axios.get(`${BASE_URL}/videos`, {
@@ -24,6 +29,7 @@ export const getVideos = async (): Promise<Video[]> => {
         key: API_KEY,
       },
     });
+    
 
     const videos = response.data.items.map((item: any) => ({
       id: item.id,
