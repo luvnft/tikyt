@@ -1,6 +1,8 @@
-module.exports = {
-    reactStrictMode: true,
-    images: {
-      domains: ['www.studiobinder.com', 'vectorified.com'],
-    },
-  };
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    domains: ['i.ytimg.com', 'www.youtube.com'],
+  },
+};
+
+module.exports = nextConfig;
