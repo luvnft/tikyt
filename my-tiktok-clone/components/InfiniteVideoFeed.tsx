@@ -1,4 +1,4 @@
-// components/InfiniteVideoFeed.tsx
+// InfiniteVideoFeed.tsx
 import React, { useState, useEffect, useCallback } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import VideoFeed from './VideoFeed';
@@ -14,12 +14,8 @@ interface Video {
   comments: number;
 }
 
-interface InfiniteVideoFeedProps {
-  initialVideos: Video[];
-}
-
-const InfiniteVideoFeed: React.FC<InfiniteVideoFeedProps> = ({ initialVideos }) => {
-  const [videos, setVideos] = useState<Video[]>(initialVideos);
+const InfiniteVideoFeed: React.FC = () => {
+  const [videos, setVideos] = useState<Video[]>([]);
   const [nextPageToken, setNextPageToken] = useState<string | null>(null);
   const [hasMore, setHasMore] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -46,11 +42,8 @@ const InfiniteVideoFeed: React.FC<InfiniteVideoFeedProps> = ({ initialVideos }) 
   }, [loading, nextPageToken]);
 
   useEffect(() => {
-    console.log('Videos:', videos); // Log videos state
-    console.log('Next page token:', nextPageToken); // Log next page token
-    console.log('Loading:', loading); // Log loading state
-    console.log('Error:', error); // Log error state
-  }, [videos, nextPageToken, loading, error]);
+    loadMoreVideos();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (error) {
     return <div>Error: {error}</div>;
