@@ -1,5 +1,5 @@
 const BottomNav: React.FC = () => (
-  <div className="grid grid-cols-5 h-[43px] bg-black fixed bottom-0 w-full border-t border-gray-800">
+  <div className="grid grid-cols-5 h-[43px] bg-black z-[12] fixed bottom-0 w-full border-t border-gray-800">
       <div className="flex justify-center text-2xl text-white">
         <svg width="32px" data-e2e="" height="32px" viewBox="0 0 48 48" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M24.9505 7.84001C24.3975 7.38666 23.6014 7.38666 23.0485 7.84003L6.94846 21.04C6.45839 21.4418 6.2737 22.1083 6.48706 22.705C6.70041 23.3017 7.26576 23.7 7.89949 23.7H10.2311L11.4232 36.7278C11.5409 38.0149 12.6203 39 13.9128 39H21.5C22.0523 39 22.5 38.5523 22.5 38V28.3153C22.5 27.763 22.9477 27.3153 23.5 27.3153H24.5C25.0523 27.3153 25.5 27.763 25.5 28.3153V38C25.5 38.5523 25.9477 39 26.5 39H34.0874C35.3798 39 36.4592 38.0149 36.577 36.7278L37.7691 23.7H40.1001C40.7338 23.7 41.2992 23.3017 41.5125 22.705C41.7259 22.1082 41.5412 21.4418 41.0511 21.04L24.9505 7.84001Z"></path></svg>
         <div className="absolute font-semibold text-[10px] text-white text-center top-[19px] max-h-[640px]:top-[28px]">Home</div>
