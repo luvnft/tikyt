@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'tiktok-text-regular';
-    src: url('https://sf16-website-login.neutral.ttwstatic.com/obj/tiktok_web_login_static/tiktok_fonts/TikTokFont-Regular.woff2?_default_font=1&v=2') format('woff2');
-    font-display: swap;
-  }
+  font-family: 'tiktok-text-regular';
+  src: url('https://sf16-website-login.neutral.ttwstatic.com/obj/tiktok_web_login_static/tiktok_fonts/TikTokFont-Regular.woff2?_default_font=1&v=2') format('woff2');
+  font-display: swap;
+}
 
 .h-screen {
   height: 91vh;
