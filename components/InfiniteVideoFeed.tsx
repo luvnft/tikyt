@@ -1,5 +1,4 @@
-// InfiniteVideoFeed.tsx
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import VideoFeed from './VideoFeed';
 import { getVideos } from '../services/youtubeService';
@@ -20,6 +19,7 @@ const InfiniteVideoFeed: React.FC = () => {
   const [hasMore, setHasMore] = useState(true);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const videoRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const loadMoreVideos = useCallback(async () => {
     if (loading) return; // Prevent multiple simultaneous requests
@@ -45,6 +45,29 @@ const InfiniteVideoFeed: React.FC = () => {
     loadMoreVideos();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      for (let i = 0; i < videoRefs.current.length; i++) {
+        const videoElement = videoRefs.current[i];
+        if (videoElement) {
+          const videoTop = videoElement.offsetTop;
+          const videoBottom = videoTop + videoElement.offsetHeight;
+          if (scrollPosition >= videoTop && scrollPosition <= videoBottom) {
+            videoElement.scrollIntoView({ behavior: 'smooth' });
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [videos]);
+
   if (error) {
     return <div>Error: {error}</div>;
   }
@@ -57,22 +80,27 @@ const InfiniteVideoFeed: React.FC = () => {
       loader={<h4>Loading...</h4>}
       endMessage={<p>No more videos</p>}
     >
-      {videos.map((video) => (
-        <VideoFeed
+      {videos.map((video, index) => (
+        <div
           key={video.id}
-          videoUrl={`https://www.youtube.com/watch?v=${video.id}`}
-          posterSrc={video.thumbnail}
-          author={{
-            username: video.channelTitle,
-            nickname: video.channelTitle,
-            avatarSrc: video.channelAvatar,
-          }}
-          stats={{
-            likes: video.likes.toString(),
-            shares: '0', // Placeholder for shares as YouTube API does not provide this
-            comments: video.comments.toString(),
-          }}
-        />
+          ref={(el) => (videoRefs.current[index] = el)}
+          className="h-screen"
+        >
+          <VideoFeed
+            videoUrl={`https://www.youtube.com/watch?v=${video.id}`}
+            posterSrc={video.thumbnail}
+            author={{
+              username: video.channelTitle,
+              nickname: video.channelTitle,
+              avatarSrc: video.channelAvatar,
+            }}
+            stats={{
+              likes: video.likes.toString(),
+              shares: '0', // Placeholder for shares as YouTube API does not provide this
+              comments: video.comments.toString(),
+            }}
+          />
+        </div>
       ))}
     </InfiniteScroll>
   );
