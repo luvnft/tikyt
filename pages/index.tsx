@@ -1,4 +1,3 @@
-// pages/index.tsx
 import { GetServerSideProps, NextPage } from 'next';
 import Header from '../components/Header';
 import BottomNav from '../components/BottomNav';

@@ -13,8 +13,12 @@ interface Video {
   comments: number;
 }
 
-const InfiniteVideoFeed: React.FC = () => {
-  const [videos, setVideos] = useState<Video[]>([]);
+interface InfiniteVideoFeedProps {
+  initialVideos: Video[];
+}
+
+const InfiniteVideoFeed: React.FC<InfiniteVideoFeedProps> = ({ initialVideos }) => {
+  const [videos, setVideos] = useState<Video[]>(initialVideos);
   const [nextPageToken, setNextPageToken] = useState<string | null>(null);
   const [hasMore, setHasMore] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -42,7 +46,9 @@ const InfiniteVideoFeed: React.FC = () => {
   }, [loading, nextPageToken]);
 
   useEffect(() => {
-    loadMoreVideos();
+    if (initialVideos.length === 0) {
+      loadMoreVideos();
+    }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {

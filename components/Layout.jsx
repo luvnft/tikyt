@@ -1,5 +1,3 @@
-// components/Layout.jsx
-
 import React from 'react';
 import NavDrawer from './NavDrawer'; // Adjust the path according to your file structure
 
