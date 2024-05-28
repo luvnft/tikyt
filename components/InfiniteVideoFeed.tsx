@@ -83,7 +83,7 @@ const InfiniteVideoFeed: React.FC = () => {
       {videos.map((video, index) => (
         <div
           key={video.id}
-          ref={(el) => (videoRefs.current[index] = el)}
+          ref={(el: HTMLDivElement | null) => { videoRefs.current[index] = el; }}
           className="h-screen"
         >
           <VideoFeed
