@@ -130,7 +130,7 @@ You can deploy this project using:
 
 - GitHub: [@BHObserver](https://github.com/BHObserver)
 - Twitter: [@BurhanU14173360](https://twitter.com/BurhanU14173360)
-- LinkedIn: [bhobserver](https://www.linkedin.com/in/hans-dev)
+- LinkedIn: [hans-dev](https://www.linkedin.com/in/hans-dev)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
