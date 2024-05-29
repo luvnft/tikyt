@@ -139,7 +139,7 @@ You can deploy this project using:
 
 - [ ] **Desktop Version**
 - [ ] **Signup and Login**
-- [ ] **Page Discovery**
+- [ ] **New Page - Discovery**
 - [ ] **Search Box**
 
 
