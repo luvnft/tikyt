@@ -61,6 +61,12 @@
 
 ### Key Features <a name="key-features"></a>
 
+- [ ] **Mobile Responsive**
+- [ ] **Nav-Drawer**
+- [ ] **Bottom-Nav**
+- [ ] **Real-time Video Rendering through Youtube API**
+- [ ] **Infinite scrolling**
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -74,7 +80,6 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
@@ -104,9 +109,9 @@ npm run dev
 
 ### Prerequisites
 
-1. A Code Editor
-2. Git
-3. Internet Browser
+>1. A Code Editor
+>2. Git
+>3. Internet Browser
 
 ### Deployment
 
