@@ -42,9 +42,9 @@
 > - The project, created with Next.js, Tailwind CSS, and TypeScript, mimics TikTok's mobile homepage. It includes real-time video rendering using the YouTube API, delivering a continuous stream of content. Designed for mobile devices, the interface ensures smooth navigation and viewing on smartphones and tablets.
 
 ## 🛠 Built With <a name="built-with"></a>
-1. Next.js
-2. Tailwind CSS
-3. Typescript
+>1. Next.js
+>2. Tailwind CSS
+>3. Typescript
 
 ### Tech Stack <a name="tech-stack"></a>
 
