@@ -1,3 +1,4 @@
+// components/InfiniteVideoFeed.tsx
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import VideoFeed from './VideoFeed';
@@ -18,7 +19,7 @@ interface InfiniteVideoFeedProps {
 }
 
 const InfiniteVideoFeed: React.FC<InfiniteVideoFeedProps> = ({ initialVideos }) => {
-  const [videos, setVideos] = useState<Video[]>(initialVideos);
+  const [videos, setVideos] = useState<Video[]>(initialVideos || []);
   const [nextPageToken, setNextPageToken] = useState<string | null>(null);
   const [hasMore, setHasMore] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -86,7 +87,7 @@ const InfiniteVideoFeed: React.FC<InfiniteVideoFeedProps> = ({ initialVideos }) 
       loader={<h4>Loading...</h4>}
       endMessage={<p>No more videos</p>}
     >
-      {videos.map((video, index) => (
+      {Array.isArray(videos) && videos.map((video, index) => (
         <div
           key={video.id}
           ref={(el: HTMLDivElement | null) => { videoRefs.current[index] = el; }}

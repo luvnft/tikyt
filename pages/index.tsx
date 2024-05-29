@@ -1,3 +1,4 @@
+// pages/index.tsx
 import { GetServerSideProps, NextPage } from 'next';
 import Header from '../components/Header';
 import BottomNav from '../components/BottomNav';
@@ -33,7 +34,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
   return {
     props: {
-      videos,
+      videos: Array.isArray(videos) ? videos : [], // Ensure videos is always an array
     },
   };
 };
