@@ -24,7 +24,7 @@ const NavDrawer: React.FC<NavDrawerProps> = ({ isDrawerOpen, drawerRef }) => {
         <div className="box-border fixed top-[60px] bottom-[10px] w-[285px] z-11 overflow-y-auto overscroll-contain perspective-[1px] transform-style-preserve-3d perspective-origin-top-right pr-3">
           <div className="box-border h-full">
             <div className="w-[285px] h-full pt-2 flex flex-shrink-0 flex-col items-stretch">
-              <div className="css-xmh2k9-DivUpperContent">
+              <div className="h-full">
                 <div className="mb-2 pl-2">
                   <Link href="/foryou" legacyBehavior>
                     <a className="relative flex justify-start items-center p-2 box-border rounded transition-background duration-200 ease-in-out" data-e2e="nav-foryou">
