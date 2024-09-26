@@ -75,7 +75,7 @@
 
 ### LIVE DEMO
 
-> Watch [LIVE](https://tiktok-clone-mobile-one.vercel.app/) demo of the web-app.
+> Watch [LIVE](https://tiktok-clone-mobile-20nv2xx9s-burhan-uddins-projects-de70f949.vercel.app/) demo of the web-app.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
